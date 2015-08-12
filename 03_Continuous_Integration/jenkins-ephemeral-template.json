@@ -47,6 +47,7 @@
         "creationTimestamp": null
       },
       "spec": {
+        "host": "jenkins.devops.ose.jbrideratwater.com",
         "to": {
           "kind": "Service",
           "name": "${JENKINS_SERVICE_NAME}"
@@ -85,7 +86,7 @@
             "containers": [
               {
                 "name": "jenkins",
-                "image": "openshift/jenkins-16-centos7",
+                "image": "jbride/jenkins-ose-dev",
                 "env": [
                   {
                     "name": "JENKINS_PASSWORD",
