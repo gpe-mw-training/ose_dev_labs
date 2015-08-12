@@ -1,0 +1,7 @@
+`jenkins-ephermeral-template.json` data file is taken from :
+
+https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/jenkins-ephemeral-template.json
+
+and modified such that the route does not specify TLS credentials.
+
+Instead, Jenkins executes strickly on http.
