@@ -246,7 +246,15 @@
                             "kind": "ImageStreamTag",
                             "name": "jboss-eap6-openshift:6.4",
                             "namespace": "openshift"
-                        }
+                        },
+                        "env": [
+                          {
+                                "Name": "DISABLE_ASSET_COMPILATION",
+                                "Value": "true"
+                          }, {
+                                "Name": "APPLICATION_ARTIFACT_URL",
+                                "Value": "http://jenkins.devops.ose.jbrideratwater.com/job/bookstore/lastSuccessfulBuild/artifact/target/bookstore.war"
+                          }
                     },
                     "type": "Source"
                 },
