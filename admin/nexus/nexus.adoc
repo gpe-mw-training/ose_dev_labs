@@ -1,0 +1,61 @@
+:noaudio:
+:data-uri:
+:toc2:
+
+= Nexus configuration
+
+. To execute the Nexus within a container run:
++
+
+[source,console,numbered]
+-----
+docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+-----
++
+. Nexus will start listening to the port `8081` and the credentials are `admin/admin123`.
+. The `pom.xml` must be changed to point to the Nexus instance using the container IP or `localhost` if you are building from local and using nexus as proxy:
++ 
+
+[source,xml,numbered]
+-----
+<repositories>
+    <repository>
+    <id>Samuel Repository</id>
+    <url>http://172.17.0.3:8081/content/groups/public/</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+    <id>Samuel Repository</id>
+    <url>http://172.17.0.3:8081/content/groups/public/</url>
+    </pluginRepository>
+</pluginRepositories>
+-----
++
+. Access http://localhost:8081 and log using the credentials provided before.
+. Create two repositories of type Proxy by clicking: *Views/Repositories -> Repositories -> Add -> Proxy Repository*.
+. Configure the _Tech Preview_ repository as following:
++
+image::images/tech_preview.png[]
++
+. Configure the _Early Access_ repository as following:
++
+image::images/early_access.png[]
++
+. Configure the public group (Public Repository) adding to the *Ordered Group Repositories* list only the three: *Central, Red Hat Early Access and Red Hat Tech Preview*.
++
+image::images/public_repo.png[]
+
+== Persistent Volume Storage
+
+-----
+oc create -f nexus-volume.json
+-----
+
+-----
+oc create -f nexus-claim.json
+-----
+
+-----
+oc volume dc/nexus --add --overwrite -t persistentVolumeClaim --claim-name=nexus-claim --name=nexus-data
+-----

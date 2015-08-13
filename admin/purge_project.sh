@@ -30,3 +30,7 @@ oc delete sa --all
 
 echo -en "\n***** Delete Secrets\n"
 oc delete secrets --all
+
+echo -en "\n**** refreshed policies\n"
+oc policy add-role-to-user admin system:serviceaccount:devops:default
+oc create -f ~/application-templates/secrets/eap-app-secret.json
