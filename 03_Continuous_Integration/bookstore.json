@@ -254,7 +254,10 @@
                           }, {
                                 "Name": "APPLICATION_ARTIFACT_URL",
                                 "Value": "http://jenkins.devops.ose.jbrideratwater.com/job/bookstore/lastSuccessfulBuild/artifact/target/bookstore.war"
-                          }
+                          }, {
+                                "Name": "DOWNLOAD_USER_CREDENTIALS",
+                                "Value": "admin:password"
+			  }
 			]
                     },
                     "type": "Source"
