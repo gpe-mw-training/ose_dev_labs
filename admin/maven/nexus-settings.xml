@@ -8,16 +8,16 @@
     Default local maven repository is ~/.m2/repository
     Its recommended that student's use a fresh local maven repository.
     If you want to start and use a different local maven repository than your default, then uncomment and modifiy this next line -->
-  <localRepository>/u02/maven/defaultrepo</localRepository>
+  <!--localRepository>/u02/maven/defaultrepo</localRepository -->
 
 
   <profiles>
     <profile>
-            <id>tech-preview-all</id>
+            <id>nexus-public-all</id>
             <repositories>
                 <repository>
-                    <id>tech-preview-all</id>
-                    <name>Red Hat Tech Preview repository (all)</name>
+                    <id>nexus-public-all</id>
+                    <name>Nexus Public repository (all)</name>
                     <url>http://localhost:8081/content/groups/public/</url>
                     <layout>default</layout>
                     <releases>
@@ -32,8 +32,8 @@
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>tech-preview-all</id>
-                    <name>Red Hat Tech Preview repository (all)</name>
+                    <id>nexus-public-all</id>
+                    <name>Nexus Public repository (all)</name>
                     <url>http://localhost:8081/content/groups/public/</url>
                     <layout>default</layout>
                     <releases>
@@ -50,7 +50,7 @@
   </profiles>
 
   <activeProfiles>
-    <activeProfile>tech-preview-all</activeProfile>
+    <activeProfile>nexus-public-all</activeProfile>
   </activeProfiles>
 
 </settings>
