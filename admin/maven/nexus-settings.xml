@@ -8,7 +8,7 @@
     Default local maven repository is ~/.m2/repository
     Its recommended that student's use a fresh local maven repository.
     If you want to start and use a different local maven repository than your default, then uncomment and modifiy this next line -->
-  <!--localRepository>/u02/maven/defaultrepo</localRepository -->
+  <localRepository>/u02/maven/defaultrepo</localRepository>
 
 
   <profiles>
@@ -18,7 +18,7 @@
                 <repository>
                     <id>tech-preview-all</id>
                     <name>Red Hat Tech Preview repository (all)</name>
-                    <url>http://localhost:8081/content/repositories/redhat-techpreview-all-repository/</url>
+                    <url>http://localhost:8081/content/groups/public/</url>
                     <layout>default</layout>
                     <releases>
                         <enabled>true</enabled>
@@ -34,7 +34,7 @@
                 <pluginRepository>
                     <id>tech-preview-all</id>
                     <name>Red Hat Tech Preview repository (all)</name>
-                    <url>http://localhost:8081/content/repositories/redhat-techpreview-all-repository/</url>
+                    <url>http://localhost:8081/content/groups/public/</url>
                     <layout>default</layout>
                     <releases>
                         <enabled>true</enabled>
