@@ -117,7 +117,13 @@
                             "kind": "ImageStreamTag",
                             "name": "jboss-eap6-openshift:6.4",
                             "namespace": "openshift"
-                        }
+                        },
+			"env": [
+      			  {
+        			"Name": "MAVEN_ARGS",
+        			"Value": "clean package -DskipTests -DOSE_NEXUS_HOST=nexus.admin-project.ose.jbrideratwater.com"
+      			  }
+    			]
                     },
                     "type": "Source"
                 },
@@ -219,7 +225,7 @@
                 "name": "session-replication"
             },
             "spec": {
-                "replicas": 1,
+                "replicas": 0,
                 "selector": {
                     "deploymentConfig": "session-replication"
                 },
