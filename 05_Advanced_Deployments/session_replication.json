@@ -225,7 +225,7 @@
                 "name": "session-replication"
             },
             "spec": {
-                "replicas": 0,
+                "replicas": 1,
                 "selector": {
                     "deploymentConfig": "session-replication"
                 },
