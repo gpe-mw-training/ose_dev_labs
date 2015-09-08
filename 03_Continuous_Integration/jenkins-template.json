@@ -47,7 +47,7 @@
         "creationTimestamp": null
       },
       "spec": {
-        "host": "jenkins.devops.ose.jbrideratwater.com",
+        "host": "jenkins.jbride-redhat-osedev.cloudapps.mwl.opentlc.com",
         "to": {
           "kind": "Service",
           "name": "${JENKINS_SERVICE_NAME}"

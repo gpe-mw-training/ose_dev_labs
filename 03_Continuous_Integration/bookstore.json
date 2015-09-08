@@ -119,7 +119,7 @@
                 "name": "bookstore-http-route"
             },
             "spec": {
-                "host": "bookstore.devops.ose.jbrideratwater.com",
+                "host": "bookstore.jbride-redhat-osedev.cloudapps.mwl.opentlc.com",
                 "to": {
                     "name": "bookstore"
                 }
@@ -195,7 +195,7 @@
                         "env": [
                           {
                                 "Name": "MAVEN_ARGS",
-                                "Value": "clean package -DskipTests -DOSE_NEXUS_HOST=nexus.admin-project.ose.jbrideratwater.com"
+                                "Value": "clean package -DskipTests -DOSE_NEXUS_HOST=inf00-mwl.opentlc.com"
                           }
                         ]
                     },
@@ -259,7 +259,7 @@
                                 "Value": "true"
                           }, {
                                 "Name": "APPLICATION_ARTIFACT_URL",
-                                "Value": "http://jenkins.devops.ose.jbrideratwater.com/job/bookstore/lastSuccessfulBuild/artifact/target/bookstore.war"
+                                "Value": "http://jenkins.jbride-redhat-osedev.cloudapps.mwl.opentlc.com/job/bookstore/lastSuccessfulBuild/artifact/target/bookstore.war"
                           }, {
                                 "Name": "DOWNLOAD_USER_CREDENTIALS",
                                 "Value": "admin:password"
