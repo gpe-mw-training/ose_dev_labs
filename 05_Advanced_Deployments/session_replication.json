@@ -69,7 +69,7 @@
                 "name": "session-replication-http-route"
             },
             "spec": {
-                "host": "session-replication.devops.ose.jbrideratwater.com",
+                "host": "session-replication.jbride-redhat-osedev.cloudapps.mwl.opentlc.com",
                 "to": {
                     "name": "session-replication"
                 }
@@ -121,75 +121,8 @@
 			"env": [
       			  {
         			"Name": "MAVEN_ARGS",
-        			"Value": "clean package -DskipTests -DOSE_NEXUS_HOST=nexus.admin-project.ose.jbrideratwater.com"
+        			"Value": "clean package -DskipTests -s maven/nexus-hardcoded-settings.xml"
       			  }
-    			]
-                    },
-                    "type": "Source"
-                },
-                "triggers": [
-                    {
-                        "github": {
-                            "secret": "RiaxUMKv"
-                        },
-                        "type": "GitHub"
-                    },
-                    {
-                        "generic": {
-                            "secret": "rBRvI8v6"
-                        },
-                        "type": "Generic"
-                    },
-                    {
-                        "imageChange": {},
-                        "type": "ImageChange"
-                    }
-                ]
-            }
-        },
-        {
-            "apiVersion": "v1",
-            "kind": "BuildConfig",
-            "metadata": {
-                "labels": {
-                    "application": "session-replication",
-                    "template": "eap6-basic-sti"
-                },
-                "name": "session-replication-jenkins"
-            },
-            "spec": {
-                "output": {
-                    "to": {
-                        "kind": "ImageStreamTag",
-                        "name": "session-replication:latest"
-                    }
-                },
-                "source": {
-                    "contextDir": "",
-                    "git": {
-                        "ref": "master",
-                        "uri": "https://github.com/gpe-mw-training/session-replication"
-                    },
-                    "type": "Git"
-                },
-                "strategy": {
-                    "sourceStrategy": {
-                        "from": {
-                            "kind": "ImageStreamTag",
-                            "name": "jboss-eap6-openshift:6.4",
-                            "namespace": "openshift"
-                        },
-			"env": [
-      			  {
-        			"Name": "DISABLE_ASSET_COMPILATION",
-        			"Value": "true"
-      			  }, {
-        			"Name": "APPLICATION_ARTIFACT_URL",
-        			"Value": "http://jenkins.devops.ose.jbrideratwater.com/job/session-replication/lastSuccessfulBuild/artifact/target/session-replication.war"
-			  }, {
-                                "Name": "DOWNLOAD_USER_CREDENTIALS",
-                                "Value": "admin:password"
-                          }
     			]
                     },
                     "type": "Source"
@@ -225,7 +158,7 @@
                 "name": "session-replication"
             },
             "spec": {
-                "replicas": 1,
+                "replicas": 0,
                 "selector": {
                     "deploymentConfig": "session-replication"
                 },
