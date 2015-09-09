@@ -195,7 +195,7 @@
                         "env": [
                           {
                                 "Name": "MAVEN_ARGS",
-                                "Value": "clean package -DskipTests -DOSE_NEXUS_HOST=inf00-mwl.opentlc.com"
+                                "Value": "clean package -DskipTests -s config/nexus-hardcoded-settings.xml"
                           }
                         ]
                     },
