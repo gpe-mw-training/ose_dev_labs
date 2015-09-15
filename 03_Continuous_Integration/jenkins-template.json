@@ -86,7 +86,7 @@
             "containers": [
               {
                 "name": "jenkins",
-                "image": "jbride/jenkins-ose-dev",
+                "image": "jbride/jenkins-ose-dev:latest",
                 "env": [
                   {
                     "name": "JENKINS_PASSWORD",
