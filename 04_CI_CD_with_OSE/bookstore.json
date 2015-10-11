@@ -168,67 +168,6 @@
                     "application": "bookstore",
                     "template": "eap6-mysql-sti"
                 },
-                "name": "bookstore"
-            },
-            "spec": {
-                "output": {
-                    "to": {
-                        "kind": "ImageStreamTag",
-                        "name": "bookstore:latest"
-                    }
-                },
-                "source": {
-                    "contextDir": "",
-                    "git": {
-                        "ref": "master",
-                        "uri": "https://github.com/gpe-mw-training/bookstore"
-                    },
-                    "type": "Git"
-                },
-                "strategy": {
-                    "sourceStrategy": {
-                        "from": {
-                            "kind": "ImageStreamTag",
-                            "name": "jboss-eap6-openshift:6.4",
-                            "namespace": "openshift"
-                        },
-                        "env": [
-                          {
-                                "Name": "MAVEN_ARGS",
-                                "Value": "clean package -DskipTests -s config/nexus-hardcoded-settings.xml"
-                          }
-                        ]
-                    },
-                    "type": "Source"
-                },
-                "triggers": [
-                    {
-                        "github": {
-                            "secret": "lfTHrR6e"
-                        },
-                        "type": "GitHub"
-                    },
-                    {
-                        "generic": {
-                            "secret": "ne2qAvF8"
-                        },
-                        "type": "Generic"
-                    },
-                    {
-                        "imageChange": {},
-                        "type": "ImageChange"
-                    }
-                ]
-            }
-        },
-        {
-            "apiVersion": "v1",
-            "kind": "BuildConfig",
-            "metadata": {
-                "labels": {
-                    "application": "bookstore",
-                    "template": "eap6-mysql-sti"
-                },
                 "name": "bookstore-jenkins"
             },
             "spec": {
