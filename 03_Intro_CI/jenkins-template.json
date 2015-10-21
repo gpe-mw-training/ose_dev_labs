@@ -101,7 +101,7 @@
                   }
                 ],
                 "terminationMessagePath": "/dev/termination-log",
-                "imagePullPolicy": "IfNotPresent",
+                "imagePullPolicy": "Always",
                 "capabilities": {},
                 "securityContext": {
                   "capabilities": {},
@@ -109,6 +109,7 @@
                 }
               }
             ],
+            "serviceAccount": "default",
             "volumes": [
               {
                 "name": "${JENKINS_SERVICE_NAME}-data",
@@ -121,8 +122,7 @@
             "dnsPolicy": "ClusterFirst"
           }
         }
-      },
-      "status": {}
+      }
     }
   ],
   "parameters": [
