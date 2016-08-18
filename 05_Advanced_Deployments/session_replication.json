@@ -115,7 +115,7 @@
                     "sourceStrategy": {
                         "from": {
                             "kind": "ImageStreamTag",
-                            "name": "jboss-eap6-openshift:6.4",
+                            "name": "jboss-eap64-openshift:latest",
                             "namespace": "openshift"
                         },
                     "env": [
@@ -176,7 +176,7 @@
                     "sourceStrategy": {
                         "from": {
                             "kind": "ImageStreamTag",
-                            "name": "jboss-eap6-openshift:6.4",
+                            "name": "jboss-eap64-openshift:latest",
                             "namespace": "openshift"
                         },
                  "env": [
