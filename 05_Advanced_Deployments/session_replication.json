@@ -118,12 +118,12 @@
                             "name": "jboss-eap6-openshift:6.4",
                             "namespace": "openshift"
                         },
-			"env": [
-      			  {
-        			"Name": "MAVEN_ARGS",
-        			"Value": "clean package -DskipTests -DOSE_NEXUS_HOST=nexus.admin-project.ose.jbrideratwater.com"
-      			  }
-    			]
+                    "env": [
+                      {
+                        "name": "MAVEN_ARGS",
+                        "value": "clean package -DskipTests -DOSE_NEXUS_HOST=nexus.admin-project.ose.jbrideratwater.com"
+                      }
+                    ]
                     },
                     "type": "Source"
                 },
@@ -179,20 +179,20 @@
                             "name": "jboss-eap6-openshift:6.4",
                             "namespace": "openshift"
                         },
-			"env": [
-      			  {
-        			"Name": "DISABLE_ASSET_COMPILATION",
-        			"Value": "true"
-      			  }, {
-        			"Name": "APPLICATION_ARTIFACT_URL",
-        			"Value": "http://jenkins.devops.ose.jbrideratwater.com/job/session-replication/lastSuccessfulBuild/artifact/target/session-replication.war"
-			  }, {
-                                "Name": "DOWNLOAD_USER_CREDENTIALS",
-                                "Value": "admin:password"
-                          }
-    			]
+                 "env": [
+                       {
+                         "name": "DISABLE_ASSET_COMPILATION",
+                         "value": "true"
+                       }, {
+                         "name": "APPLICATION_ARTIFACT_URL",
+                         "value": "http://jenkins.devops.ose.jbrideratwater.com/job/session-replication/lastSuccessfulBuild/artifact/target/session-replication.war"
+                       }, {
+                         "name": "DOWNLOAD_USER_CREDENTIALS",
+                         "value": "admin:password"
+                       }
+                     ]
                     },
-                    "type": "Source"
+                 "type": "Source"
                 },
                 "triggers": [
                     {
